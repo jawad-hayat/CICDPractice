@@ -31,9 +31,9 @@ jobs:
     - name: Stop IIS
       run: iisreset /stop
     - name: Deploy to IIS
-      run: Copy-Item -Path C:\Windows\System32\actions-runner\_work\CICDPractice\CICDPractice\dotnetcorewebapp\* -Destination C:\Users\jawad.h\OneDrive - Pacsquare Technoloiges\Desktop\CICDPractice -Recurse -Force
+      run: Copy-Item -Path C:\Windows\System32\actions-runner\_work\CICDPractice\CICDPractice\dotnetcorewebapp\* -Destination D:\CICDPractice -Recurse -Force
     - name: List files in IIS
-      run: Get-ChildItem -Path C:\Users\jawad.h\OneDrive - Pacsquare Technoloiges\Desktop\CICDPractice -Recurse
+      run: Get-ChildItem -Path D:\CICDPractice -Recurse
     - name: Start IIS
       run: iisreset /start
 

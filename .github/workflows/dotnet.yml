@@ -28,4 +28,12 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Publish
       run: dotnet publish -c Debug -o dotnetcorewebapp .\
+    - name: Stop IIS
+        run: iisreset /stop
+      - name: Deploy to IIS
+        run: Copy-Item -Path C:\Windows\System32\actions-runner\_work\CICDPractice\CICDPractice\dotnetcorewebapp\* -Destination C:\Users\jawad.h\OneDrive - Pacsquare Technoloiges\Desktop\CICDPractice -Recurse -Force
+      - name: List files in IIS
+        run: Get-ChildItem -Path C:\Users\jawad.h\OneDrive - Pacsquare Technoloiges\Desktop\CICDPractice -Recurse
+      - name: Start IIS
+        run: iisreset /start
 
